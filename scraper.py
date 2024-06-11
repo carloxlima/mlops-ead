@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
 # Instantiate options
 options = Options()
@@ -27,7 +28,8 @@ options = webdriver.ChromeOptions()
 
 #Inicia-se a instancia do Chrome WebDrive com as definiçoes do option e service.
 #driver =  webdriver.Chrome(service=service, options=options)
-driver = webdriver.Chrome(executable_path='/path/to/driver/chromedriver')
+#driver = webdriver.Chrome(executable_path='/path/to/driver/chromedriver')
+driver = webdriver.Chrome(ChromeDriverManager().install())
 
 url = 'https://www.ibge.gov.br/estatisticas/downloads-estatisticas.html'
 driver.get(url)
