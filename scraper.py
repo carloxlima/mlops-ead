@@ -1,37 +1,35 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-import chromedriver_autoinstaller
-from pyvirtualdisplay import Display
-display = Display(visible=0, size=(800, 800))  
-display.start()
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+# Instantiate options
+options = Options()
 
-chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
-                                      # and if it doesn't exist, download it automatically,
-                                      # then add chromedriver to path
+# Add extra options
+options.add_argument("--window-size=1920,1080")  # Set the window size
+options.add_argument("--disable-infobars")  # Disable the infobars
+options.add_argument("--disable-popup-blocking")  # Disable pop-ups
 
-chrome_options = webdriver.ChromeOptions()    
-# Add your options as needed    
-options = [
-  # Define window size here
-   "--window-size=1200,1200",
-    "--ignore-certificate-errors"
- 
-    #"--headless",
-    #"--disable-gpu",
-    #"--window-size=1920,1200",
-    #"--ignore-certificate-errors",
-    #"--disable-extensions",
-    #"--no-sandbox",
-    #"--disable-dev-shm-usage",
-    #'--remote-debugging-port=9222'
-]
+# Ignore certificate errors
+options.add_argument("--ignore-certificate-errors")
+options.add_argument("--incognito")  # Use Chrome in incognito mode
 
-for option in options:
-    chrome_options.add_argument(option)
+# Classe Service é usada para iniciar um instancia do Chrome WebDriver
+service =  Service()
 
-    
-driver = webdriver.Chrome(options = chrome_options)
+# webdriver.ChromeOptions é usado para definir a preferencia para o navegador do Chrome
+# Esta ignorando as configurações que fiz no inicio
+options = webdriver.ChromeOptions()
+
+#Inicia-se a instancia do Chrome WebDrive com as definiçoes do option e service.
+driver =  webdriver.Chrome(service=service, options=options)
+
+url = 'https://www.ibge.gov.br/estatisticas/downloads-estatisticas.html'
+driver.get(url)
+print(driver.title)
 
 driver.get('http://github.com')
 print(driver.title)
