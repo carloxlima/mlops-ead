@@ -26,8 +26,8 @@ service =  Service()
 options = webdriver.ChromeOptions()
 
 #Inicia-se a instancia do Chrome WebDrive com as definiçoes do option e service.
-#driver =  webdriver.Chrome(service=service, options=options)
-driver =  webdriver.Chrome()
+driver =  webdriver.Chrome(service=service, options=options)
+#driver =  webdriver.Chrome()
 
 url = 'https://www.ibge.gov.br/estatisticas/downloads-estatisticas.html'
 driver.get(url)
