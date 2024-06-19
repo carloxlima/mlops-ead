@@ -13,8 +13,6 @@ car_data = domo.ds_get('11bec3ba-7e78-44c2-82ff-fa9ba0620c59')
 
 print(car_data)
 
-domo = Domo(cliente_id, secret, api_host='api.domo.com')
-
 options = Options()
 options.add_argument('-headless')  # Execute o Firefox em modo headless
 
