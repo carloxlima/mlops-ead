@@ -1,8 +1,9 @@
 name: Run Python Script
 
 on:
-  workflow_dispatch:
-  
+  schedule:
+    - cron: '42 16 * * *'
+    
 env:
   client_id: ${{ secrets.CLIENTE_ID_DOMO }}
   client_secret: ${{ secrets.SECRET_DOMO }}
