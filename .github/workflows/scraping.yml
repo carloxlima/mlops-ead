@@ -2,7 +2,7 @@ name: Run Python Script
 
 on:
   schedule:
-    - cron: '52 19 * * *'
+    - cron: '20 20 * * *'
     
 env:
   client_id: ${{ secrets.CLIENTE_ID_DOMO }}
