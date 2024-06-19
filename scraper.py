@@ -8,6 +8,7 @@ import os
 client_id = os.environ['client_id']
 client_secret = os.environ['client_secret']
 
+domo = Domo(cliente_id, client_secret, api_host='api.domo.com')
 car_data = domo.ds_get('11bec3ba-7e78-44c2-82ff-fa9ba0620c59')
 
 print(car_data)
