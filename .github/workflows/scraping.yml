@@ -1,4 +1,4 @@
-name: Run Selenium Tests
+name: Run Python Script
 
 on:
   push:
@@ -7,6 +7,9 @@ on:
   pull_request:
     branches:
       - main  # ou a branch que você deseja monitorar
+env:
+  client_id: ${{ secrets.CLIENTE_ID_DOMO }}
+  client_secret: ${{ secrets.SECRET_DOMO }}
 
 jobs:
   test:
