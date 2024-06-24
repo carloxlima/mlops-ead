@@ -44,6 +44,6 @@ jobs:
       run: |
         pwd
         python Exec-Web-Scraping-Scanntech-Firefox-Github.py
-        ls Scanntech/concluidos
+        ls *
       env:
         DISPLAY: ":99.0"
