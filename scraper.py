@@ -17,7 +17,7 @@ options = Options()
 options.add_argument('-headless')  # Execute o Firefox em modo headless
 
 options.set_preference("browser.download.folderList", 2)
-options.set_preference("browser.download.dir", download_path)
+options.set_preference("browser.download.dir", '/')
 options.set_preference("browser.helperApps.neverAsk.saveToDisk", "text/csv")
 options.set_preference("browser.download.manager.showWhenStarting", False)
 # Desativa o visualizador de PDF embutido
