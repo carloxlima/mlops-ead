@@ -135,10 +135,16 @@ options.set_preference("browser.download.manager.showWhenStarting", False)
 # Desativa o visualizador de PDF embutido
 options.set_preference("pdfjs.disabled", True)
 
+print('antes do drive')
 
 service = FirefoxService(executable_path='/usr/local/bin/geckodriver')
+
+print('antes do drive2')
+
 driver = webdriver.Firefox(service=service, options=options)
-    
+
+print('depois do drive')
+
 url = url_01
 
 driver.get(url)
