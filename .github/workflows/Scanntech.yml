@@ -44,7 +44,8 @@ jobs:
       run: |
         pwd
         ls *
+        python Exec-Web-Scraping-Scanntech-Firefox-Github.py
         python scraper.py
-        find / -type f -name "*.csv"
+        find /home/runner/work/mlops-ead -type f -name "*.csv"
       env:
         DISPLAY: ":99.0"
