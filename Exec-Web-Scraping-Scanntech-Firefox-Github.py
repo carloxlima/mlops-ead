@@ -12,8 +12,6 @@ from datetime import datetime, timedelta, date
 from dateutil.relativedelta import relativedelta
 import locale
 from babel.dates import format_date, get_month_names
-import ipywidgets as widgets
-from IPython.display import display
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
