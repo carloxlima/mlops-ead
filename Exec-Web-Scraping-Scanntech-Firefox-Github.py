@@ -127,6 +127,8 @@ if recursive == 1:
 
 options = Options()
 options.add_argument('-headless')  # Execute o Firefox em modo headless
+options.set_preference("browser.download.dir", download_path)
+options.set_preference("browser.helperApps.neverAsk.saveToDisk", "text/csv")
 
 service = FirefoxService(executable_path='/usr/local/bin/geckodriver')
 driver = webdriver.Firefox(service=service, options=options)
