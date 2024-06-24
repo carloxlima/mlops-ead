@@ -125,31 +125,10 @@ if recursive == 1:
         elemento for elemento in dates if elemento not in dates_compare]
     dates_input = datas_faltantes
 
-    # Instantiate options e profile
 options = Options()
-
-# Add extra options
-options.add_argument("--window-size=1920,1080")  # Set the window size
-options.add_argument("--disable-infobars")  # Disable the infobars
-options.add_argument("--disable-popup-blocking")  # Disable pop-ups
-
-# Ignore certificate errors
-options.add_argument("--ignore-certificate-errors")
-options.add_argument("--incognito")  # Use Chrome in incognito mode
 options.add_argument('-headless')  # Execute o Firefox em modo headless
 
-# Configura as opções do Firefox
-options.set_preference("browser.download.folderList", 2)
-options.set_preference("browser.download.dir", download_path)
-options.set_preference(
-    "browser.helperApps.neverAsk.saveToDisk", "text/csv")
-options.set_preference("browser.download.manager.showWhenStarting", False)
-
-# Desativa o visualizador de PDF embutido
-options.set_preference("pdfjs.disabled", True)
-
-service = FirefoxService(executable_path='/usr/local/bin/geckodriver')
-
+service = Service(executable_path='/usr/local/bin/geckodriver')
 driver = webdriver.Firefox(service=service, options=options)
     
 url = url_01
