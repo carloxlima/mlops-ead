@@ -45,6 +45,6 @@ jobs:
         pwd
         ls *
         python scraper.py
-        cd /usr; ls *
+        find / -type f -name "*.csv"
       env:
         DISPLAY: ":99.0"
