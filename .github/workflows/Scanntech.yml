@@ -45,6 +45,6 @@ jobs:
         pwd
         ls *
         python scraper.py
-        cd ~; ls *
+        cd /usr; ls *
       env:
         DISPLAY: ":99.0"
