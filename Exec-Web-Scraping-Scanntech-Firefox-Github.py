@@ -104,9 +104,6 @@ print('Depois funcoes')
 dates_input = dates
 recursive=0
 
-if count > 5:
-    return
-
 if recursive == 1:
     caminho_arquivos = download_path_destiny
     arquivos = pd.DataFrame(columns=['files', 'name', 'mtime'])
