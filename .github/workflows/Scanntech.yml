@@ -43,8 +43,7 @@ jobs:
     - name: Run tests
       run: |
         pwd
-        python Exec-Web-Scraping-Scanntech-Firefox-Github.py
         ls *
-        cd /home/Downloads ; ls *
+        cd /home ; ls *
       env:
         DISPLAY: ":99.0"
