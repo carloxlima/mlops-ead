@@ -321,6 +321,9 @@ try:
         )
         # Click the download link
         download_link.click()
+
+        time.sleep(60)
+        
         print('loop for 10')
         if is_download_complete(download_path):
             print('loop for 11')
@@ -372,6 +375,6 @@ except:
 # Close the Chrome driver
 driver.quit()
 
-
+time.sleep(60)
 print('depois chamada funcao webscraping')
 
