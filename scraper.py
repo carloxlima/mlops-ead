@@ -27,7 +27,7 @@ service = Service(executable_path='/usr/local/bin/geckodriver')
 driver = webdriver.Firefox(service=service, options=options)
 
 # Seu código para usar o driver vai aqui
-url = 'https://www.stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2021-financial-year-provisional/Download-data/annual-enterprise-survey-2021-financial-year-provisional-csv.csv'
+url = 'https://www.stats.govt.nz/large-datasets/csv-files-for-download/'
 driver.get(url)
 print(driver.title)
 with open('./GitHub_Action_Results.txt', 'w') as f:
