@@ -101,6 +101,9 @@ def nome_para_numero_mes(nome_mes, locale='pt_BR'):
 
 print('Depois funcoes')
 
+a = is_download_complete(download_path)
+print(a)
+
 dates_input = dates
 recursive=0
 
