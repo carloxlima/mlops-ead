@@ -17,11 +17,13 @@ car_data = domo.ds_get('11bec3ba-7e78-44c2-82ff-fa9ba0620c59')
 
 print(car_data)
 
+folder = os.getcwd()
+
 options = Options()
 options.add_argument('-headless')  # Execute o Firefox em modo headless
 
 options.set_preference("browser.download.folderList", 2)
-options.set_preference("browser.download.dir", '/')
+options.set_preference("browser.download.dir", folder)
 options.set_preference("browser.helperApps.neverAsk.saveToDisk", "text/csv")
 options.set_preference("browser.download.manager.showWhenStarting", False)
 # Desativa o visualizador de PDF embutido
