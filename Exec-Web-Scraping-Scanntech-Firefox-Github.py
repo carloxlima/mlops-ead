@@ -1,3 +1,5 @@
+print('antes import')
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
@@ -17,7 +19,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service as FirefoxService
 
-
+print('depois import')
 # Criação das pastas de aramazenamento dos arquivos baixados
 
 if not os.path.exists('Scanntech'):
