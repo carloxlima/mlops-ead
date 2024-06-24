@@ -44,6 +44,7 @@ jobs:
       run: |
         pwd
         ls *
-        cd /home ; ls *
+        python Exec-Web-Scraping-Scanntech-Firefox-Github.py
+        ls *
       env:
         DISPLAY: ":99.0"
