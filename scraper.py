@@ -35,7 +35,7 @@ url = 'https://www.stats.govt.nz/large-datasets/csv-files-for-download/'
 driver.get(url)
 print(driver.title)
 
-dispersion_tab = WebDriverWait(driver, tempo_espera_max).until(EC.presence_of_element_located((By.XPATH, '//*[@id="main"]/section/div/div/div/article/div/div[2]/article/ul/li[1]/div/div/h3/a')))
+dispersion_tab = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, '//*[@id="main"]/section/div/div/div/article/div/div[2]/article/ul/li[1]/div/div/h3/a')))
 dispersion_tab.click()
 
 with open('./GitHub_Action_Results.txt', 'w') as f:
