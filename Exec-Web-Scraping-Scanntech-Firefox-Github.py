@@ -153,6 +153,7 @@ print(driver.title)
 
 try:
 
+    print('try')
     # Wait for the login page to load and enter the email and password
     email_field = WebDriverWait(driver, tempo_espera_max).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, '#username'))
@@ -173,6 +174,7 @@ try:
 
     for date in dates_input:
 
+        print('Loop for')
         url = url_02
         driver.get(url)
 
