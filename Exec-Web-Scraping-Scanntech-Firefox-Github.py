@@ -128,7 +128,7 @@ if recursive == 1:
 options = Options()
 options.add_argument('-headless')  # Execute o Firefox em modo headless
 
-service = Service(executable_path='/usr/local/bin/geckodriver')
+service = FirefoxService(executable_path='/usr/local/bin/geckodriver')
 driver = webdriver.Firefox(service=service, options=options)
     
 url = url_01
