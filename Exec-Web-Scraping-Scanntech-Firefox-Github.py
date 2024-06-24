@@ -324,6 +324,7 @@ try:
         print('loop for 10')
         if is_download_complete(download_path):
             print('loop for 11')
+            print(download_path)
             # Check for downloaded files and rename the downloaded file
             downloaded_files = None
             while downloaded_files is None:
@@ -331,7 +332,7 @@ try:
                 print('loop for 12')
                 time.sleep(30)  # Wait for the search results to load
                 for filename in Path(download_path).glob('*.csv'):
-                    # print(filename.name)
+                    print(filename.name)
                     new_row = {'files': str(filename),
                                 'mtime': filename.stat().st_mtime}
                     downloaded_files = pd.concat(
