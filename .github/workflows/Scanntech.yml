@@ -1,6 +1,7 @@
 name: Run Python Script Web Scraping Scanntech
 
 on:
+  workflow_dispatch: 
   schedule:
     - cron: '20 20 * * *'
     
