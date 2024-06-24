@@ -132,6 +132,9 @@ options.set_preference("browser.download.folderList", 2)
 options.set_preference("browser.download.dir", download_path)
 options.set_preference("browser.helperApps.neverAsk.saveToDisk", "text/csv")
 options.set_preference("browser.download.manager.showWhenStarting", False)
+# Desativa o visualizador de PDF embutido
+options.set_preference("pdfjs.disabled", True)
+
 
 service = FirefoxService(executable_path='/usr/local/bin/geckodriver')
 driver = webdriver.Firefox(service=service, options=options)
