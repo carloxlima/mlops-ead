@@ -42,7 +42,7 @@ jobs:
 
     - name: Run tests
       run: |
-        python scraper.py
+        pwd
         python Exec-Web-Scraping-Scanntech-Firefox-Github.py
       env:
         DISPLAY: ":99.0"
