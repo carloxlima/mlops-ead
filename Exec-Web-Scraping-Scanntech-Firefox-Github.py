@@ -335,7 +335,7 @@ try:
                         [downloaded_files, pd.DataFrame([new_row])], ignore_index=True)
                 time.sleep(15)
             print('loop for 13')
-            display(downloaded_files)
+            print(downloaded_files)
 
             if not downloaded_files.empty:
                 print('loop for 14')
