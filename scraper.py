@@ -20,7 +20,7 @@ service = Service(executable_path='/usr/local/bin/geckodriver')
 driver = webdriver.Firefox(service=service, options=options)
 
 # Seu código para usar o driver vai aqui
-url = 'https://www.ibge.gov.br/estatisticas/downloads-estatisticas.html'
+url = 'https://ftp.ibge.gov.br/Acesso_a_internet_e_posse_celular/2005/Celular/celular.zip'
 driver.get(url)
 print(driver.title)
 with open('./GitHub_Action_Results.txt', 'w') as f:
