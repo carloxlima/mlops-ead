@@ -193,7 +193,7 @@ try:
                 (By.XPATH, '//div[@widgetid="tableauTabbedNavigation_tab_1"]'))
         )
         dispersion_tab.click()
-
+        print('loop for 01')
         time.sleep(20)  # Wait for the search results to load
 
         # Encontra o elemento de filtro de reset e deixa ele visivel
@@ -210,7 +210,7 @@ try:
                 (By.CSS_SELECTOR, '#dijit_form_Button_162'))
         )
         reset_filter.click()
-
+        print('loop for 02')
         time.sleep(20)  # Wait for the search results to load
         driver.save_screenshot("image_reset_filter.png")
 
@@ -227,7 +227,7 @@ try:
         )
         checkbox.click()
         checkbox.click()
-
+        print('loop for 03')
         # Enter the date in the search field
         search_field = WebDriverWait(driver, tempo_espera_max).until(
             EC.presence_of_element_located(
@@ -241,7 +241,7 @@ try:
 
         # Envia a tecla Del para apagar o texto selecionado
         search_field.send_keys(Keys.DELETE)
-
+        print('loop for 04')
         # Envia a data para o campo de busca
         # Enter the date in the search field
         search_field.click()
@@ -255,7 +255,7 @@ try:
                 (By.XPATH, '//input[@type="checkbox"]'))
         )
         checkbox.click()
-
+        print('loop for 05')
         # Click the "Apply" button
         apply_button = WebDriverWait(driver, tempo_espera_max).until(
             EC.presence_of_element_located(
@@ -272,7 +272,7 @@ try:
         #body.click()
         # Press Escape to close the filter window
         body.send_keys(Keys.ESCAPE)
-
+        print('loop for 06')
         time.sleep(10)  # Wait for the search results to load
 
         # Click on the download table twice to enable the download button
@@ -281,7 +281,7 @@ try:
                 (By.XPATH, '//*[@id="tabZoneId87"]/div'))
         )
         download_table.click()
-
+        print('loop for 07')
         time.sleep(10)  # Wait for the search results to load
 
         download_table.click()
@@ -294,7 +294,7 @@ try:
                 (By.CSS_SELECTOR, '#download-ToolbarButton'))
         )
         download_button.click()
-
+        print('loop for 08')
         # Click the "Data" button in the download dialog
         data_button = WebDriverWait(driver, tempo_espera_max).until(
             EC.presence_of_element_located(
@@ -303,12 +303,12 @@ try:
         data_button.click()
 
         driver.save_screenshot("troca_janela.png")
-
+        
         # Switch to the new download window
         window_handles = driver.window_handles
         new_window_handle = window_handles[1]
         driver.switch_to.window(new_window_handle)
-
+        print('loop for 09')
         # driver.save_screenshot("image_download" + datetime.today().strftime("%m%d%Y_%H%M%S")+".png")
 
         # Wait for the download to complete and find the download link
@@ -318,12 +318,14 @@ try:
         )
         # Click the download link
         download_link.click()
-
+        print('loop for 10')
         if is_download_complete(download_path):
+            print('loop for 11')
             # Check for downloaded files and rename the downloaded file
             downloaded_files = None
             while downloaded_files is None:
                 downloaded_files = pd.DataFrame(columns=['files', 'mtime'])
+                print('loop for 12')
                 time.sleep(30)  # Wait for the search results to load
                 for filename in Path(download_path).glob('*.csv'):
                     # print(filename.name)
@@ -332,10 +334,11 @@ try:
                     downloaded_files = pd.concat(
                         [downloaded_files, pd.DataFrame([new_row])], ignore_index=True)
                 time.sleep(15)
-
+            print('loop for 13')
             display(downloaded_files)
 
             if not downloaded_files.empty:
+                print('loop for 14')
                 old_file_name = downloaded_files['files'].iloc[0]
                 new_file_name = f"{date.replace(' ', '_')}_{report_name}.csv"
                 Path(old_file_name).rename(
