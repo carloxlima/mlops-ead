@@ -98,7 +98,7 @@ def nome_para_numero_mes(nome_mes, locale='pt_BR'):
 def WebScrapingScanntech(dates, download_path, download_path_destiny, tempo_espera_max, recursive):
     global count, url_01, url_02
     dates_input = dates
-
+    print('Entrou na função principal')
     if count > 5:
         return
 
@@ -369,6 +369,7 @@ def WebScrapingScanntech(dates, download_path, download_path_destiny, tempo_espe
     # Close the Chrome driver
     driver.quit()
 
+print('Linha antes da chamada de função!')
 WebScrapingScanntech(dates, download_path,download_path_destiny, tempo_espera_max, recursive=0)
 
 
