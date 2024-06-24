@@ -377,3 +377,7 @@ def WebScrapingScanntech(dates, download_path, download_path_destiny, tempo_espe
 
 print('depois funcao webscraping')
 
+WebScrapingScanntech(dates, download_path, download_path_destiny, tempo_espera_max,0)
+
+print('depois chamada funcao webscraping')
+
